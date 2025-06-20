@@ -2,26 +2,45 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Contato - Casa de Axé</title>
+  <title>Fale Conosco - Casa de Axé</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .contato {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contato p {
+      font-size: 1.1em;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Contato</h1>
+    <h1>Fale Conosco</h1>
     <nav>
       <a href="index.html">Início</a>
-      <a href="produtos.html">Produtos</a>
+      <a href="velas.html">Velas</a>
+      <a href="ervas.html">Ervas e Defumações</a>
+      <a href="guias.html">Guias de Proteção</a>
       <a href="carrinho.html">Carrinho</a>
       <a href="contato.html">Contato</a>
     </nav>
   </header>
-  <main>
-    <form>
-      <label>Nome: <input type="text" name="nome"></label><br>
-      <label>Email: <input type="email" name="email"></label><br>
-      <label>Mensagem:<br><textarea name="mensagem"></textarea></label><br>
-      <button type="submit">Enviar</button>
-    </form>
+
+  <main class="contato">
+    <p>Entre em contato conosco pelo WhatsApp:</p>
+    <p><strong>(47) 98810-9442</strong></p>
+    <p>Ou clique no botão verde no canto da tela para nos chamar diretamente.</p>
   </main>
+
+  <!-- Botão do WhatsApp -->
+  <a href="https://wa.me/5547988109442?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20produtos%20da%20Casa%20de%20Ax%C3%A9." 
+     target="_blank" 
+     style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <img src="https://openai-chatgpt.github.io/imagens-casadeaxe/whatsapp-icon.png" 
+         alt="WhatsApp" 
+         style="width: 60px; height: 60px;">
+  </a>
 </body>
 </html>
