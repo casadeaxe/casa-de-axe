@@ -81,3 +81,12 @@ main img {
   font-size: 1.1em;
   text-decoration: none;
 }
+
+.whatsapp-button img {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
