@@ -2,118 +2,233 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Na Casa de Axé, você encontra artigos religiosos que trazem força, proteção e espiritualidade para o seu dia a dia. Velas, ervas, guias, incensos e muito mais, tudo selecionado com carinho para conectar você às suas raízes e às tradições que fortalecem a alma. Seja para seu altar, para banhos ou para rituais, nossa loja é o espaço onde a fé ganha vida e o axé está presente em cada detalhe." />
   <title>Casa de Axé – Conectando Você ao Sagrado</title>
 
-  <!-- Link para a fonte Poppins do Google Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 
   <style>
+    /* Reset básico */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #faf9f6;
-      color: #222;
-    }
-    header {
-      background: #fff;
-      color: #000;
-      padding: 15px 20px;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9f6f0;
+      color: #4a342e;
+      line-height: 1.6;
+      min-height: 100vh;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
+      flex-direction: column;
     }
+
+    header {
+      background-color: #6b1e30; /* vinho escuro */
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     header img {
       height: 60px;
+      filter: brightness(0) invert(1);
     }
+
     nav a {
-      color: #000;
-      margin-left: 20px;
+      color: #f3d28b; /* dourado claro */
+      font-weight: 600;
+      margin-left: 25px;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
       color: #d4af37;
     }
-    .hero {
+
+    /* Banner principal */
+    .banner {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: #fff;
       text-align: center;
-      padding: 30px 20px;
-      background: linear-gradient(to bottom, #fff, #f3f3f3);
+      padding: 100px 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .hero h1 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #4a342e;
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(107,30,48,0.7); /* overlay vinho escuro */
+      z-index: 0;
     }
-    .hero p {
-      font-size: 1.2rem;
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
       max-width: 700px;
       margin: 0 auto;
-      color: #555;
     }
+
+    .banner h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .banner p {
+      font-size: 1.3rem;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.6);
+    }
+
+    /* Produtos */
     .produtos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
+      padding: 50px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
+
+    .produtos h2 {
+      font-family: 'Poppins', sans-serif;
+      color: #6b1e30;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 2.2rem;
+    }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
     .produto {
       background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(107,30,48,0.1);
       padding: 20px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
+
+    .produto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(107,30,48,0.2);
+    }
+
     .produto img {
-      max-width: 100%;
+      width: 100%;
       height: 180px;
       object-fit: cover;
+      border-radius: 10px;
       margin-bottom: 15px;
     }
+
     .produto h3 {
+      font-family: 'Poppins', sans-serif;
+      color: #6b1e30;
       margin-bottom: 10px;
     }
+
     .produto p {
-      margin-bottom: 15px;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #444;
     }
+
     .produto a {
       display: inline-block;
-      padding: 10px 15px;
-      background: #d4af37;
-      color: #000;
+      padding: 10px 20px;
+      background-color: #d4af37;
+      color: #4a342e;
+      border-radius: 6px;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
+
     .produto a:hover {
-      background: #000;
+      background-color: #6b1e30;
       color: #fff;
     }
-    footer {
-      background: #000;
-      color: #fff;
+
+    /* Seção Quem Somos */
+    .quem-somos {
+      background-color: #fff3db;
+      padding: 50px 30px;
+      max-width: 900px;
+      margin: 50px auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(107,30,48,0.1);
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
     }
-    .whatsapp {
+
+    .quem-somos h2 {
+      font-family: 'Poppins', sans-serif;
+      color: #6b1e30;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+
+    .quem-somos p {
+      font-size: 1.2rem;
+      color: #4a342e;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #6b1e30;
+      color: #f3d28b;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: auto;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* Botões fixos WhatsApp e Instagram */
+    .whatsapp, .instagram {
       position: fixed;
-      bottom: 20px;
       right: 20px;
       z-index: 100;
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
-    .whatsapp img {
-      width: 40px;
-      height: 40px;
+    .whatsapp {
+      bottom: 20px;
+    }
+    .instagram {
+      bottom: 80px;
+    }
+    .whatsapp:hover, .instagram:hover {
+      transform: scale(1.1);
+    }
+    .whatsapp img, .instagram img {
+      width: 45px;
+      height: 45px;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+      border-radius: 8px;
+      background: #fff;
+      padding: 5px;
     }
   </style>
 </head>
 <body>
+
   <header>
     <img src="https://raw.githubusercontent.com/casadeaxe/casa-de-axe/main/logo.jpg" alt="Logo Casa de Axé" />
     <nav>
@@ -123,42 +238,22 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Casa de Axé – Conectando Você ao Sagrado</h1>
-    <p>
-      Na Casa de Axé, você encontra artigos religiosos que trazem força, proteção e espiritualidade para o seu dia a dia. Velas, ervas, guias, incensos e muito mais, tudo selecionado com carinho para conectar você às suas raízes e às tradições que fortalecem a alma. Seja para seu altar, para banhos ou para rituais, nossa loja é o espaço onde a fé ganha vida e o axé está presente em cada detalhe.
-    </p>
-  </section>
-
-  <section class="produtos">
-    <div class="produto">
-      <img src="https://picsum.photos/250/180?random=1" alt="Vela Vermelha" />
-      <h3>Vela Vermelha</h3>
-      <p>R$ 10,00</p>
-      <a href="https://wa.me/5547988109442?text=Olá!%20Gostei%20da%20Vela%20Vermelha%20-%20R$10,00">Comprar pelo WhatsApp</a>
-    </div>
-    <div class="produto">
-      <img src="https://picsum.photos/250/180?random=2" alt="Incenso de Arruda" />
-      <h3>Incenso de Arruda</h3>
-      <p>R$ 8,00</p>
-      <a href="https://wa.me/5547988109442?text=Olá!%20Gostei%20do%20Incenso%20de%20Arruda%20-%20R$8,00">Comprar pelo WhatsApp</a>
-    </div>
-    <div class="produto">
-      <img src="https://picsum.photos/250/180?random=3" alt="Alguidar de Barro" />
-      <h3>Alguidar de Barro</h3>
-      <p>R$ 25,00</p>
-      <a href="https://wa.me/5547988109442?text=Olá!%20Gostei%20do%20Alguidar%20de%20Barro%20-%20R$25,00">Comprar pelo WhatsApp</a>
+  <section class="banner">
+    <div class="banner-content">
+      <h1>Fortaleça sua espiritualidade com artigos cheios de axé</h1>
+      <p>Velas, ervas, guias, incensos e muito mais, selecionados com carinho para conectar você às suas raízes e tradições.</p>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Casa de Axé. Todos os direitos reservados.
-  </footer>
-
-  <div class="whatsapp">
-    <a href="https://wa.me/5547988109442?text=Olá!%20Tenho%20interesse%20nos%20produtos%20da%20Casa%20de%20Axé." target="_blank" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    </a>
-  </div>
-</body>
-</html>
+  <section class="produtos" id="produtos">
+    <h2>Produtos em Destaque</h2>
+    <div class="produtos-grid">
+      <div class="produto">
+        <img src="https://picsum.photos/260/180?random=1" alt="Vela Vermelha" />
+        <h3>Vela Vermelha</h3>
+        <p>R$ 10,00</p>
+        <a href="https://wa.me/5547988109442?text=Olá!%20Gostei%20da%20Vela%20Vermelha%20-%20R$10,00" target="_blank" rel="noopener noreferrer">Comprar pelo WhatsApp</a>
+      </div>
+      <div class="produto">
+        <img src="https://picsum.photos/260/180?random=2" alt="Incenso de Arruda" />
+        <h3>Ince
